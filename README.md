@@ -4,4 +4,4 @@ A collection of d3-projects covering common visualizations from simple ones to c
 
 ## Demo
 
-https://d3-house.netlify.app
+https://d3-projects.netlify.app
