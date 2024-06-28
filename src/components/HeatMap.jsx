@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import * as d3 from "d3";
 
 export default function HeatMap() {
+  const [data, setData] = useState([]);
   const ref = useRef();
   const w = 400;
   const h = 400;
