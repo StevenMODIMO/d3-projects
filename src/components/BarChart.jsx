@@ -4,7 +4,7 @@ import * as d3 from "d3";
 export default function BarChart() {
   const [data, setData] = useState([]);
   const ref = useRef();
-  const w = 400;
+  const w = 900;
   const h = 400;
   const padding = 60;
 
@@ -26,7 +26,10 @@ export default function BarChart() {
     const svg = d3.select(ref.current);
 
     svg
-      .attr("class", "bg-white cursor-pointer rounded")
+      .attr(
+        "class",
+        "bg-white cursor-pointer rounded"
+      )
       .attr("width", w)
       .attr("height", h);
 
@@ -69,7 +72,7 @@ export default function BarChart() {
     const tooltip = d3
       .select("body")
       .append("div")
-      .attr("class", "absolute bg-blue-500 px-1 rounded text-white")
+      .attr("class", "absolute bg-blue-500 px-1 rounded text-white");
 
     svg
       .selectAll("rect")
@@ -84,9 +87,7 @@ export default function BarChart() {
       .style("fill", "navy")
       .on("mouseover", function (event, d) {
         tooltip.style("display", "block");
-        tooltip.html(
-          `Date: ${d[0]}<br>GDP: $${d[1].toFixed(2)} Billion`
-        );
+        tooltip.html(`Date: ${d[0]}<br>GDP: $${d[1].toFixed(2)} Billion`);
       })
       .on("mousemove", function (event) {
         tooltip
@@ -118,7 +119,7 @@ export default function BarChart() {
   });
 
   return (
-    <main>
+    <main className="w-fit mx-auto mt-4 mb-4">
       <svg ref={ref} />
     </main>
   );

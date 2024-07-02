@@ -4,7 +4,7 @@ import * as d3 from "d3";
 export default function ScatterPlot() {
   const [data, setData] = useState();
   const ref = useRef();
-  const w = 400;
+  const w = 900;
   const h = 400;
   const padding = 60;
 
@@ -30,7 +30,10 @@ export default function ScatterPlot() {
     svg
       .attr("width", w)
       .attr("height", h)
-      .attr("class", "bg-white cursor-pointer rounded");
+      .attr(
+        "class",
+        "bg-white cursor-pointer rounded"
+      );
 
     // Parse the time and create scales
     const parseTime = d3.timeParse("%M:%S");
@@ -51,7 +54,6 @@ export default function ScatterPlot() {
     const xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d"));
 
     const yAxis = d3.axisLeft(yScale).tickFormat(d3.timeFormat("%M:%S"));
-
     // Append axes
     svg
       .append("g")
@@ -102,7 +104,7 @@ export default function ScatterPlot() {
       .text("Scatter Plot");
   }, [data]);
   return (
-    <main>
+    <main className="w-fit mx-auto mt-4 mb-4">
       <svg ref={ref} />
     </main>
   );
