@@ -1,8 +1,8 @@
 import BarChart from "./components/BarChart";
 import ScatterPlot from "./components/ScatterPlot";
-import HeatMap from './components/HeatMap'
+import HeatMap from "./components/HeatMap";
 import ChorePloth from "./components/ChoroPleth";
-import TreeMap from "./components/Treemap"
+import TreeMap from "./components/TreeMap"
 
 export default function App() {
   return (
